@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Arnav Jain</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            position: sticky;
+            top: 0;
+            background-color:rgba(213, 246, 255, 0.85);
+        }
+        .name{
+            font-size: 3em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: darkblue;
+        }
+        .namephoto{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px  solid black;
+        }
+        .myphoto{
+            height: 120px;
+            border-radius: 30px;
+            border: 4px solid black
+        }
+        .information{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: dotted 2px black;
+            padding: 4px;
+        }
+        .links ul{
+            display: flex;
+            list-style-type:none;
+            gap: 6px;
+        }
+        .numbermail ul{
+            display: flex;
+            list-style-type: none;
+            gap: 8px;
+        }
+
+
+
+
+
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid black;
+            padding: 10px;
+            gap:10px;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(188, 206, 221);
+
+        }
+        .skills,.projects,.accomplishments,.education{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding:10px;
+            text-align: center;
+            width: 40%;
+            height: 60vh;
+        }
+        .skills{
+            background-color: rgb(206, 241, 255);
+        }
+        .projects{
+            background-color: azure;
+        }
+        .accomplishments{
+            background-color: rgb(206, 241, 255);
+        }
+        .education{
+            background-color: azure;
+        }
+        main ul{
+            padding: 5px;
+            margin: 10px;
+            list-style-type: none;
+        }
+        main ul li{
+            margin: 5px;
+            padding: 5px;
+        }
+        main ul h3{
+            margin: 5px;
+        }
+
+
+        footer{
+            padding: 10px;
+            padding: 10px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(146, 226, 255);
+        }
+        .hobbies ul{
+            display: flex;
+            justify-content: space-around;
+        }
+       
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="namephoto">
+                <h1 class="name">Arnav Jain</h1>
+                <img src="me.jpg" alt="" class="myphoto">
+            </div>
+            <div class="information">
+                <div class="links">
+                    <ul class="weblinks">
+                        <li>LinkedIn</li>
+                        <li>Github</li>
+                        <li>Leetcode</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+                <div class="numbermail">
+                    <ul>
+                        <li>+91-8103253791</li>
+                        <li>arnav.jain6505@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="skills">
+            <h1>Skills</h1>
+            <ul>
+                <li><h3>Languages:</h3> C++(DSA), OOP, C(DAA), Java, Python, HTML5, CSS3</li>
+                <li><h3>Tools:</h3> Git,Github</li>
+                <li><h3>Electronics: </h3>
+                Assembly Language(intermediate), Arduino Development Board</li>
+                <li><h3>Japanese Language: </h3>VIT Japenese course,Duolingo</li>
+            </ul>
+        </div>
+        <div class="education">
+            <h1>Education</h1>
+            <ul>
+                <li><h3>Vellore Institute of Technolgy Vellore(Tamil Nadu)</h3>
+                Bachelor's degree in Computer Science and Engineering(B.tech) ; CGPA : 8.92 <br> Sept 2022-July 2026</li>
+                <li><h3>Pioneer Convent School Indore(M.P)</h3>
+                PCM with Physical Education CBSE: 88% <br> Jan 2020-April 2022</li>
+                <li>
+                    <h3>Advance Academy School Indore(M.P)</h3>
+                    CBSE class 10th- 95% <br>(2010 - 2020)
+                </li>
+            </ul>
+        </div>
+        <div class="projects">
+            <h1>Projects</h1>
+            <ul>
+                <li><h3>GIT HUB Repository: </h3>My GIT HUB Repository containing my projects
+                <a href="">WEb Dev Repository</a></li>
+                <li><h3>Netflix Clone</h3>A netflix website clone creted with HTML and CSS<a href=""> Link</a></li>
+                <li><h3>Tic-Tac-Toe Python</h3>A mini game creted in jupyter notebook using basic Python <a href="">Source Code</a></li>
+                <li><h3>Jaipur postcard</h3>Jaipur postcard created using html and CSS <a href="">Link</a></li>
+            </ul>
+        </div>
+        <div class="accomplishments">
+            <h1>Accomplishments</h1>
+            <ul>
+                <li><h4>NTSE 1st Stage Qualified (196/200 MP state)</h4></li>
+                <li><h4>Pre Regional Mathematics Olympiad Qualified</h4></li>
+                <li><h4>Completed Python Bootcamp on Udemy</h4></li>
+                <li><h4>Completed Technical Trading Analysis Course on Udemy</h4></li>
+                <li><h4>Bulls and Bears Financial Club Senior Core</h4> Participated and organized various events during in college</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="hobbies">
+            <h1>Hobbies</h1>
+            <ul>
+                <li>Basketball</li>
+                <li>Guitar</li>
+                <li>Singing</li>
+                <li>Athletics</li>
+                <li>Polygot</li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+`   

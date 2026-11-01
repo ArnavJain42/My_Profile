@@ -25,13 +25,21 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="bar wrap">
-    <a class="wordmark" href="#main">Arnav Jain</a>
-    <nav class="bar-links" aria-label="Contact">
-      <a class="link" href="mailto:arnav.jain6505@gmail.com">Email</a>
-      <a class="button" target="_blank" rel="noopener"
-        href="https://drive.google.com/file/d/1FRG21PfFDuSjSsPRI4cFidUZHpEXG3rs/view?usp=drive_link">Resume</a>
-    </nav>
+  <header class="bar">
+    <div class="bar-inner wrap">
+      <a class="wordmark" href="#main"><i class="pocket" aria-hidden="true"></i>Arnav Jain</a>
+      <nav class="bar-links" id="bar-links" aria-label="Sections">
+        <a href="#model">Model</a>
+        <a href="#system">System</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="bar-actions">
+        <a class="button" target="_blank" rel="noopener" href="https://drive.google.com/file/d/1FRG21PfFDuSjSsPRI4cFidUZHpEXG3rs/view?usp=drive_link">Resume</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="bar-links">Menu</button>
+      </div>
+    </div>
   </header>
 
   <main id="main">
@@ -180,7 +188,7 @@
             <div class="row" tabindex="0" data-preview="assets/pick-and-place-internals-of-surface-mount.jpg">
               <img class="row-thumb" src="assets/pick-and-place-internals-of-surface-mount.jpg" alt="" loading="lazy"
                 width="1322" height="1138" />
-              <span class="row-name">AI visual inspection</span><span class="row-kind">computer vision</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>AI visual inspection</span><span class="row-kind">computer vision</span><span
                 class="row-year">2026</span>
               <span class="row-desc">Multi-view EfficientNet that checks every chip face on a live line in Cebu.</span>
             </div>
@@ -189,7 +197,7 @@
             <div class="row" tabindex="0" data-preview="assets/many-different-smd-capacitors.jpg">
               <img class="row-thumb" src="assets/many-different-smd-capacitors.jpg" alt="" loading="lazy" width="1920"
                 height="1566" />
-              <span class="row-name">Chip dimension measurement</span><span class="row-kind">classical vision</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Chip dimension measurement</span><span class="row-kind">classical vision</span><span
                 class="row-year">2026</span>
               <span class="row-desc">The most repeatable method I tested was measuring the gold, not the chip. Mine is
                 within 0.69%.</span>
@@ -197,7 +205,7 @@
           </li>
           <li data-reveal>
             <div class="row">
-              <span class="row-name">Data-labelling platform</span><span class="row-kind">backend</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Data-labelling platform</span><span class="row-kind">backend</span><span
                 class="row-year">2026</span>
               <span class="row-desc">FastAPI and PostgreSQL behind the operators' iPads. Retries replay the first answer
                 instead of counting twice.</span>
@@ -205,14 +213,14 @@
           </li>
           <li data-reveal>
             <div class="row">
-              <span class="row-name">Retraining pipeline</span><span class="row-kind">ML tooling</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Retraining pipeline</span><span class="row-kind">ML tooling</span><span
                 class="row-year">2026</span>
               <span class="row-desc">A new model goes live only if it beats the current one on a frozen test set.</span>
             </div>
           </li>
           <li data-reveal>
             <div class="row">
-              <span class="row-name">Inventory and forecasting</span><span class="row-kind">team lead</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Inventory and forecasting</span><span class="row-kind">team lead</span><span
                 class="row-year">2026</span>
               <span class="row-desc">Led four interns replacing a 136-column spreadsheet. Six forecast models compete for
                 each item.</span>
@@ -220,7 +228,7 @@
           </li>
           <li data-reveal>
             <div class="row">
-              <span class="row-name">Access to SQL Server</span><span class="row-kind">databases</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Access to SQL Server</span><span class="row-kind">databases</span><span
                 class="row-year">2026</span>
               <span class="row-desc">Moving a production database off Microsoft Access, starting with a tested migration
                 plan.</span>
@@ -228,7 +236,7 @@
           </li>
           <li class="year-gap" data-reveal>
             <div class="row">
-              <span class="row-name">Operate</span><span class="row-kind">fintech</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Operate</span><span class="row-kind">fintech</span><span
                 class="row-year">2025</span>
               <span class="row-desc">Margin trading for Indian markets. I built features and moved the backend to AWS
                 Lambda.</span>
@@ -236,7 +244,7 @@
           </li>
           <li data-reveal>
             <a class="row" href="./securefile/">
-              <span class="row-name">SecureFile Vault</span><span class="row-kind">Go, GraphQL</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>SecureFile Vault</span><span class="row-kind">Go, GraphQL</span><span
                 class="row-year">2025</span>
               <span class="row-desc">File storage that keeps each file once by its SHA-256 hash, so a duplicate upload
                 costs nothing.</span>
@@ -244,21 +252,21 @@
           </li>
           <li data-reveal>
             <a class="row" href="https://github.com/ArnavJain42/FormulaVerseModel" target="_blank" rel="noopener">
-              <span class="row-name">FormulaVerse</span><span class="row-kind">NLP</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>FormulaVerse</span><span class="row-kind">NLP</span><span
                 class="row-year">2025</span>
               <span class="row-desc">Turns an equation into a word problem with SymPy, FAISS and Flan-T5.</span>
             </a>
           </li>
           <li data-reveal>
             <div class="row">
-              <span class="row-name">Label printing service</span><span class="row-kind">automation</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Label printing service</span><span class="row-kind">automation</span><span
                 class="row-year">2025</span>
               <span class="row-desc">A Node.js service that drives Brother label printers from ERP links. Still printing.</span>
             </div>
           </li>
           <li class="year-gap" data-reveal>
             <div class="row">
-              <span class="row-name">Alzheimer's detection</span><span class="row-kind">ML research</span><span
+              <span class="row-name"><i class="pocket" aria-hidden="true"></i>Alzheimer's detection</span><span class="row-kind">ML research</span><span
                 class="row-year">2024</span>
               <span class="row-desc">Classifiers on smartwatch sensor data, for a research paper at IIT Jodhpur.</span>
             </div>
@@ -277,29 +285,29 @@
       <h2 id="exp-title" class="head" data-reveal>Experience</h2>
       <ul class="ends">
         <li class="group" data-reveal>Work</li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>AI software engineer, Tecdia India, Bengaluru</span><span
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>AI software engineer, Tecdia India, Bengaluru</span><span
             class="end-value">Jul 2026 – now</span></li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>AI engineer intern, Tecdia India. <a class="link"
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>AI engineer intern, Tecdia India. <a class="link"
               target="_blank" rel="noopener"
               href="https://drive.google.com/file/d/1zXi7-YUgQbJmZepLBBXHGtBR-BlbGKVA/view?usp=drive_link">Certificate</a></span><span
             class="end-value">Jan – Jun 2026</span></li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>Software engineering intern, Tecdia Semiconductors, Tokyo,
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>Software engineering intern, Tecdia Semiconductors, Tokyo,
             remote. <a class="link" target="_blank" rel="noopener"
               href="https://drive.google.com/file/d/1ad0TlYDXAiMFVYg1vVZJ5pEDsz7PiBOa/view?usp=drive_link">Certificate</a></span><span
             class="end-value">May – Jul 2025</span></li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>Software development intern, Cygnus Capital, Indore. <a
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>Software development intern, Cygnus Capital, Indore. <a
               class="link" target="_blank" rel="noopener"
               href="https://drive.google.com/file/d/18nh7X_qbTAuehlG49IpSKb3s1mqplRBd/view?usp=drive_link">Certificate</a></span><span
             class="end-value">Jan – Mar 2025</span></li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>Research intern, Vanet Lab, IIT Jodhpur. <a class="link"
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>Research intern, Vanet Lab, IIT Jodhpur. <a class="link"
               target="_blank" rel="noopener"
               href="https://drive.google.com/file/d/1SkdbqrnDdYm_JEjJRA5bdeyeFGOovzJH/view?usp=drive_link">Certificate</a></span><span
             class="end-value">Jun – Jul 2024</span></li>
         <li class="group" data-reveal>Study</li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>B.Tech in Computer Science, VIT Vellore. CGPA
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>B.Tech in Computer Science, VIT Vellore. CGPA
             9.01</span><span class="end-value">2022 – 2026</span></li>
         <li class="group" data-reveal>Certificates</li>
-        <li data-reveal><span class="end-name"><i class="dot"></i>AWS Certified Cloud Practitioner. <a class="link"
+        <li data-reveal><span class="end-name"><i class="pocket" aria-hidden="true"></i>AWS Certified Cloud Practitioner. <a class="link"
               target="_blank" rel="noopener"
               href="https://drive.google.com/file/d/1UxcF-54jJ9YMOR-Fj7qA3F9nrYTrPa-Y/view?usp=drive_link">View
               certificate</a></span><span class="end-value">Amazon Web Services</span></li>
@@ -352,7 +360,8 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
+    <section class="contact-field" id="contact" aria-labelledby="contact-title">
+      <div class="contact wrap">
       <p class="statement" data-reveal>If you build vision models for real production lines, or backends that can't
         afford to be wrong, I'd like to hear from you.</p>
       <img class="contact-photo" src="me.jpg" alt="Arnav Jain" width="320" height="320" loading="lazy" data-reveal
@@ -362,6 +371,7 @@
         <a class="link" href="mailto:arnav.jain6505@gmail.com">arnav.jain6505@gmail.com</a>
         <a class="link" href="https://www.linkedin.com/in/arnav-jain-8aa943156" target="_blank" rel="noopener">LinkedIn</a>
         <p class="small">Bengaluru, India</p>
+      </div>
       </div>
     </section>
   </main>

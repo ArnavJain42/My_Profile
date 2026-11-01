@@ -19,6 +19,32 @@
     $$("[data-reveal]").forEach((el) => el.classList.add("is-in"));
   }
 
+  /* ---------- section bar: the link of the section in view is marked; a menu on small screens ---------- */
+  (() => {
+    const nav = $("#bar-links");
+    const menu = $(".menu-btn");
+    if (!nav) return;
+    const links = $$("a", nav);
+    const close = () => { nav.classList.remove("is-open"); menu.setAttribute("aria-expanded", "false"); };
+    menu.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      menu.setAttribute("aria-expanded", String(open));
+    });
+    links.forEach((a) => a.addEventListener("click", close));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    if (!hasIO) return;
+    const mark = (id) => links.forEach((a) => {
+      const on = a.getAttribute("href") === "#" + id;
+      a.classList.toggle("is-active", on);
+      if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+    });
+    const sections = links.map((a) => $(a.getAttribute("href"))).filter(Boolean);
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) mark(e.target.id);
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    sections.forEach((s) => io.observe(s));
+  })();
+
   /* ---------- signature: the four lighting views crossfade on the first door ---------- */
   (() => {
     const layers = $$(".lights img");

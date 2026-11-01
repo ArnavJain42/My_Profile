@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnav's Portfolio</title>
+  <title>Arnav Jain | AI Software Engineer</title>
+  <meta name="description"
+    content="Arnav Jain, AI Software Engineer at Tecdia India: production computer vision, reliable backends and ML pipelines." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
 </head>
@@ -16,6 +18,7 @@
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#work">Experience</a></li>
         <li><a href="#experience">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -32,12 +35,14 @@
       </div>
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#work" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
     </div>
   </nav>
+
   <section id="profile">
     <div class="section__pic-container">
       <img src="me.jpg" alt="Arnav Jain profile picture" />
@@ -45,7 +50,7 @@
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Arnav Jain</h1>
-      <p class="section__text__p2">B.tech CSE student at VIT Vellore</p>
+      <p class="section__text__p2">AI Software Engineer at Tecdia India</p>
       <div class="btn-container">
         <button class="btn btn-color-2"
           onclick="location.href='https://drive.google.com/file/d/1FRG21PfFDuSjSsPRI4cFidUZHpEXG3rs/view?usp=drive_link'">
@@ -63,6 +68,7 @@
       </div>
     </div>
   </section>
+
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -77,84 +83,138 @@
           <div class="details-container">
             <img src="./assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experience</h3>
-            <p>Research Intern, Vanet Labs, IIT Jodhpur<br />Software Developer Intern, Cygnus Capital<br /> Summer
-              Intern, Tecdia Japan</p>
+            <p>AI Software Engineer, Tecdia India<br />Intern, Tecdia Japan<br />SDE Intern, Cygnus Capital<br />Research
+              Intern, IIT Jodhpur</p>
           </div>
           <div class="details-container">
             <img src="./assets/education.png" alt="Education icon" class="icon" />
             <h3>Education</h3>
-            <p>B.Tech CSE<br />VIT Vellore (2022-26)</p>
+            <p>B.Tech CSE<br />VIT Vellore (2022-26)<br />CGPA 9.01</p>
           </div>
         </div>
         <div class="text-container">
           <p>
-            I'm Arnav Jain, a passionate Computer Science student at Vellore Institute of Technology with a strong
-            foundation in software development and machine learning. Currently maintaining an 8.92 CGPA, I bring
-            hands-on experience from research internships at IIT Jodhpur, where I worked on Alzheimer's disease
-            detection using smartwatch data, and software development roles at Cygnus Capital, contributing to advanced
-            trading platforms.
-
+            I'm an AI Software Engineer at Tecdia India. I joined as an intern in January 2026 and moved to full-time
+            in July. I build AI systems that have to work on a real production line: a multi-view computer vision model
+            that judges chips in under 260 ms, the backend that collects and labels its training data, and the pipeline
+            that retrains models and only promotes one when it beats the current champion.
             <br>
             <br>
-            My expertise spans full-stack web development, algorithmic trading systems, and machine learning
-            applications. I've successfully built and deployed projects like Operate - a comprehensive trading platform
-            with 10x leverage capabilities, and I'm currently developing Fluentify, an interactive language learning
-            platform. With proficiency in technologies ranging from React and TypeScript to AWS and machine learning
-            frameworks, I'm passionate about creating innovative solutions that bridge technology and real-world
-            applications.
+            I care about the engineering around the model as much as the model itself: idempotent APIs, crash recovery,
+            and systems that decline to answer rather than guess when they are unsure. I graduated in Computer Science
+            from VIT Vellore in 2026 with a 9.01 CGPA, after internships at Tecdia Japan, Cygnus Capital and IIT
+            Jodhpur.
+          </p>
         </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#work'" />
+  </section>
+
+  <section id="work">
+    <p class="section__text__p1">Where I've Worked</p>
+    <h1 class="title">Experience</h1>
+    <div class="timeline">
+      <div class="details-container role-card">
+        <div class="role-head">
+          <h3>Tecdia India Pvt. Ltd.</h3>
+          <span class="role-meta">Jan 2026 – Present · Bengaluru · <a class="cert-link" href="https://drive.google.com/file/d/1zXi7-YUgQbJmZepLBBXHGtBR-BlbGKVA/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
+        </div>
+        <p class="role-title">AI Software Engineer, Full-time (Jul 2026 – Present) · AI Engineer Intern (Jan – Jun 2026)</p>
+        <ul>
+          <li>Core engineer on a multi-view AI visual inspection system for chip components, now running on a live
+            production line in Cebu, Philippines.</li>
+          <li>Built the data-labelling platform backend (FastAPI, PostgreSQL, WebSockets) with idempotent, retry-safe
+            writes and exactly-once recovery after outages.</li>
+          <li>Built the retraining pipeline: a new model goes live only after beating the current one on a frozen test set.</li>
+          <li>Led a team of 4 interns building an inventory and demand-forecasting system.</li>
+        </ul>
+      </div>
+      <div class="details-container role-card">
+        <div class="role-head">
+          <h3>Tecdia Semiconductors Co. Ltd.</h3>
+          <span class="role-meta">May 2025 – Jul 2025 · Tokyo (Remote) · <a class="cert-link" href="https://drive.google.com/file/d/1ad0TlYDXAiMFVYg1vVZJ5pEDsz7PiBOa/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
+        </div>
+        <p class="role-title">Software Engineering Intern, ERP &amp; Automation</p>
+        <ul>
+          <li>Customised Infor SyteLine ERP modules, forms and reports on MS SQL Server.</li>
+          <li>Built a Node.js label-printing service wrapping the Brother printer SDK, still in production.</li>
+        </ul>
+      </div>
+      <div class="details-container role-card">
+        <div class="role-head">
+          <h3>Cygnus Capital</h3>
+          <span class="role-meta">Jan 2025 – Mar 2025 · Indore · <a class="cert-link" href="https://drive.google.com/file/d/18nh7X_qbTAuehlG49IpSKb3s1mqplRBd/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
+        </div>
+        <p class="role-title">Software Development Intern, Full Stack</p>
+        <ul>
+          <li>Built features for Operate, a trading platform with 10x leverage: portfolio, live market data, funds.</li>
+          <li>Moved the backend to serverless AWS (Lambda, API Gateway) and managed EC2 and AWS accounts.</li>
+        </ul>
+      </div>
+      <div class="details-container role-card">
+        <div class="role-head">
+          <h3>Vanet Lab, IIT Jodhpur</h3>
+          <span class="role-meta">Jun 2024 – Jul 2024 · Jodhpur · <a class="cert-link" href="https://drive.google.com/file/d/1SkdbqrnDdYm_JEjJRA5bdeyeFGOovzJH/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
+        </div>
+        <p class="role-title">Research Intern, Machine Learning</p>
+        <ul>
+          <li>Worked on a research paper on early detection of Alzheimer's disease from smartwatch sensor data.</li>
+          <li>Implemented and compared classification models, including the data preprocessing.</li>
+        </ul>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
   </section>
+
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Skills</h1>
     <div class="experience-details-container">
       <div class="about-containers">
         <div class="details-container">
-          <h2 class="experience-sub-title">Frontend Development</h2>
+          <h2 class="experience-sub-title">AI &amp; Machine Learning</h2>
           <div class="article-container">
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>HTML5</h3>
+                <h3>PyTorch</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>CSS3</h3>
+                <h3>OpenCV</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>JavaScript</h3>
+                <h3>scikit-learn</h3>
                 <p>Intermediate</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>TypeScript</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>React.js</h3>
+                <h3>YOLO</h3>
                 <p>Intermediate</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Figma</h3>
-                <p>Basic</p>
+                <h3>Anomaly Detection</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>LLM Agents</h3>
+                <p>Intermediate</p>
               </div>
             </article>
           </div>
@@ -162,6 +222,20 @@
         <div class="details-container">
           <h2 class="experience-sub-title">Backend Development</h2>
           <div class="article-container">
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>FastAPI</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>PostgreSQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
@@ -179,28 +253,14 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Django</h3>
+                <h3>GraphQL</h3>
                 <p>Intermediate</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Flask</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>MongoDB</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
+                <h3>WebSockets</h3>
                 <p>Intermediate</p>
               </div>
             </article>
@@ -214,13 +274,6 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>C/C++</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
                 <h3>Python</h3>
                 <p>Experienced</p>
               </div>
@@ -228,7 +281,21 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Java</h3>
+                <h3>Go</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>C++</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>JavaScript</h3>
                 <p>Intermediate</p>
               </div>
             </article>
@@ -236,32 +303,25 @@
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>SQL</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Assembly</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Japanese</h3>
-                <p>Basic (N5)</p>
+                <p>Experienced</p>
               </div>
             </article>
           </div>
         </div>
         <div class="details-container">
-          <h2 class="experience-sub-title">Tools & Technologies</h2>
+          <h2 class="experience-sub-title">Tools &amp; Cloud</h2>
           <div class="article-container">
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>AWS</h3>
+                <p><a class="cert-link" href="https://drive.google.com/file/d/1UxcF-54jJ9YMOR-Fj7qA3F9nrYTrPa-Y/view?usp=drive_link" target="_blank" rel="noopener">Certified &#8599;</a></p>
+              </div>
+            </article>
+            <article>
+              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Docker</h3>
                 <p>Intermediate</p>
               </div>
             </article>
@@ -275,29 +335,22 @@
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Docker</h3>
-                <p>Basic</p>
+                <h3>Linux</h3>
+                <p>Intermediate</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>WordPress</h3>
-                <p>Basic</p>
+                <h3>React.js</h3>
+                <p>Intermediate</p>
               </div>
             </article>
             <article>
               <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>TensorFlow</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PyTorch</h3>
-                <p>Basic</p>
+                <h3>Japanese</h3>
+                <p>Basic (N5)</p>
               </div>
             </article>
           </div>
@@ -310,74 +363,91 @@
   <section id="projects">
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="operate.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Operate A trading Platform with 10X leverage</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/Udaylev/oprate-demo-v01'">
-              Github
-            </button>
-            <a href="https://operate.trade">
-              <button class="btn btn-color-2 project-btn">
-                Demo
-              </button>
-            </a>
-          </div>
+    <div class="projects-grid">
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Tecdia · In production</span>
+        <h2>Real-Time AI Visual Inspection System</h2>
+        <p>An AI second opinion for a chip inspection machine: it reads four lighting views of each chip face and
+          answers the machine's PLC in 156 ms. In a head-to-head on 921 operator-labelled chips it beat the machine's
+          rule-based check, 94.4% vs 89.0% accuracy, catching 85% of defective chips against 47%. A multi-view
+          EfficientNet with attention fusion, trained on 27.7K chip faces. I own the AI side end to end.</p>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span
+            class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">asyncio</span><span
+            class="chip">CUDA</span></div>
+      </div>
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Personal project</span>
+        <h2>SecureFile Vault</h2>
+        <p>A Google Drive-style vault that stores each file's content exactly once. SHA-256 content addressing with
+          reference counts, so duplicate uploads cost nothing, plus JWT auth, sharing, quotas and admin analytics.</p>
+        <div class="chips"><span class="chip">Go</span><span class="chip">GraphQL</span><span
+            class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">Docker</span><span
+            class="chip">AWS</span></div>
+        <div class="btn-container">
+          <a href="./securefile/"><button class="btn btn-color-2 project-btn">Overview</button></a>
+          <a href="https://github.com/ArnavJain42/FrontendFile"><button class="btn btn-color-2 project-btn">Github</button></a>
         </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="musicmanager.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Music Libraries Mnagament System </h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ArnavJain42/music_player_manager'">
-              Github
-            </button>
-            <a href="https://ajdean.pythonanywhere.com/">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://ajdean.pythonanywhere.com/'">
-                Demo
-              </button>
-            </a>
-          </div>
+      </div>
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Tecdia · Team lead</span>
+        <h2>Smart Inventory &amp; Demand Forecasting</h2>
+        <p>Led 4 interns replacing a 136-column Excel workflow with live reorder points, shortage risk and order advice.
+          A forecasting service back-tests 6 models per item and keeps the one with the lowest holdout error.</p>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">Prisma</span><span
+            class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">FastAPI</span><span
+            class="chip">statsmodels</span></div>
+      </div>
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Tecdia · Computer vision</span>
+        <h2>Chip Dimension Measurement</h2>
+        <p>Benchmarked 13 classical methods for measuring chips and found the most repeatable one was 25–33% wrong: it
+          measured the gold pattern, not the chip. My multi-view union method reaches 0.69% error at 42 ms per face and
+          agrees with the vendor's machine within about 2% across 11.6K faces.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span
+            class="chip">NumPy</span></div>
+      </div>
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Personal project · NLP</span>
+        <h2>FormulaVerse</h2>
+        <p>Turns a math equation into a realistic word problem: SymPy parses it, FAISS retrieves a matching scenario
+          template, and an instruction-tuned Flan-T5 writes the problem.</p>
+        <div class="chips"><span class="chip">SymPy</span><span class="chip">FAISS</span><span
+            class="chip">Flan-T5</span><span class="chip">Flask</span><span class="chip">React</span></div>
+        <div class="btn-container">
+          <a href="https://github.com/ArnavJain42/FormulaVerseModel"><button
+              class="btn btn-color-2 project-btn">Github</button></a>
         </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="fluentify.png" alt="Project 3" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Fluentify Team Project (ongoing)</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/ArnavJain42/DEVSOC_BetterCallBytes_Fluentify/'">
-              Github
-            </button>
-            <a href="https://drive.google.com/file/d/1q2jNXXEPxShI_4PUweKYL2_bpiSq8ENK/view?usp=drive_link">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://drive.google.com/file/d/1q2jNXXEPxShI_4PUweKYL2_bpiSq8ENK/view?usp=drive_link'">
-                Live Demo
-              </button>
-            </a>
-          </div>
+      </div>
+      <div class="details-container color-container project-card">
+        <span class="project-tag">Cygnus Capital</span>
+        <h2>Operate: Trading Platform</h2>
+        <p>Stocks and derivatives trading with 10x leverage: portfolio, live market data, charts, watchlists and funds
+          management on a serverless AWS backend. The product now runs under another organisation.</p>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span
+            class="chip">DynamoDB</span><span class="chip">AWS Lambda</span></div>
+        <div class="btn-container">
+          <a href="https://operate.trade"><button class="btn btn-color-2 project-btn">Live Site</button></a>
         </div>
       </div>
     </div>
     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
+
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:examplemail@gmail.com">arnav.jain6505@gmail.com</a></p>
+        <p><a href="mailto:arnav.jain6505@gmail.com">arnav.jain6505@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
         <p><a href="https://linkedin.com/in/arnav-jain-8aa943156">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/github.png" alt="GitHub icon" class="icon contact-icon" />
+        <p><a href="https://github.com/ArnavJain42">GitHub</a></p>
       </div>
     </div>
   </section>
@@ -386,13 +456,14 @@
       <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
+          <li><a href="#work">Experience</a></li>
           <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <p>Copyright &#169;2024ArnavJain. All Rights Reserved.</p>
+    <p>Copyright &#169; 2026 Arnav Jain. All Rights Reserved.</p>
   </footer>
   <script src="script.js"></script>
 </body>

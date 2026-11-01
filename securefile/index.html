@@ -2,97 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SecureFile Vault | Arnav Jain</title>
-  <meta name="description" content="SecureFile Vault: a deduplicating, secure file storage service in Go, GraphQL and PostgreSQL, by Arnav Jain." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SecureFile Vault, by Arnav Jain</title>
+  <meta name="description" content="SecureFile Vault: file storage in Go, GraphQL and PostgreSQL that keeps each file once by its SHA-256 hash." />
   <script>
-    // ┌──────────────────────────────────────────────────────────────────────┐
-    // │ When the new deployment is live, paste its URL between the quotes.  │
-    // │ This page will then redirect there instantly. Leave it empty to     │
-    // │ show the project overview below instead.                            │
-    // └──────────────────────────────────────────────────────────────────────┘
+    // When the new deployment is live, paste its address between the quotes.
+    // This page then forwards there straight away. Leave it empty to show the overview below.
     const LIVE_URL = "";
 
     if (LIVE_URL) window.location.replace(LIVE_URL);
   </script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
-    :root { --ink: #111; --muted: #555; --line: #e5e5e5; --bg: #fafafa; --card: #fff; --chip: #f1f1f1; }
-    @media (prefers-color-scheme: dark) {
-      :root { --ink: #f2f2f2; --muted: #a8a8a8; --line: #2c2c2c; --bg: #121212; --card: #1a1a1a; --chip: #262626; }
+    :root {
+      --bg: #eef0f3; --surface: #e2e5ea; --ink: #0b0c0e; --muted: #5d6470;
+      --accent: #1f2de6; --accent-strong: #1520b8; --accent-ink: #ffffff;
+      --margin: clamp(20px, 2.2vw, 32px);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Poppins", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
-    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
-    .eyebrow { font-size: 13px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
-    h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 600; line-height: 1.2; margin: 6px 0 10px; }
-    .lede { color: var(--muted); font-size: 17px; max-width: 60ch; }
-    .status { display: inline-flex; gap: 8px; align-items: center; margin-top: 18px; padding: 6px 12px;
-              border: 1px solid var(--line); border-radius: 999px; font-size: 13px; background: var(--card); }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #d97706; }
-    section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin-top: 22px; }
-    h2 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
-    ul { padding-left: 18px; }
-    li { margin: 5px 0; }
-    li b { font-weight: 600; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip { background: var(--chip); border-radius: 999px; padding: 4px 12px; font-size: 13px; }
-    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-    .btn { display: inline-block; padding: 10px 18px; border-radius: 10px; font-size: 14px; font-weight: 500;
-           text-decoration: none; border: 1px solid var(--ink); color: var(--ink); }
-    .btn.primary { background: var(--ink); color: var(--bg); }
-    footer { margin-top: 30px; font-size: 13px; color: var(--muted); }
-    footer a { color: inherit; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: "STIX Two Text", "Times New Roman", serif;
+      font-size: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem); line-height: 1.5;
+    }
+    h1, h2, p, ul { margin: 0; padding: 0; }
+    h1, h2 { font-weight: 400; letter-spacing: -0.026em; line-height: 1.1; text-wrap: balance; }
+    .bar { display: flex; justify-content: space-between; align-items: center; height: 72px; padding-inline: var(--margin); font-size: 0.875rem; }
+    .bar a { color: var(--ink); }
+    .wordmark { font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); font-weight: 600; text-decoration: none; }
+    main { width: min(640px, 100% - 2 * var(--margin)); margin: clamp(48px, 8vw, 96px) auto 120px; }
+    h1 { font-size: clamp(1.9rem, 1.4rem + 2.6vw, 3.25rem); }
+    .lede { margin-top: 20px; }
+    .status { margin-top: 28px; padding: 16px 20px; background: var(--surface); }
+    h2 { margin-top: 56px; font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); }
+    ul { list-style: none; margin-top: 12px; }
+    li { margin-top: 10px; padding-left: 22px; position: relative; }
+    li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+    .stack { margin-top: 12px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 48px; }
+    .button { display: inline-flex; padding: 10px 18px; background: var(--accent); color: var(--accent-ink); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: transform 140ms cubic-bezier(0.22, 1, 0.36, 1), background-color 180ms ease; }
+    .button:active { transform: scale(0.97); }
+    .link { color: var(--ink); text-decoration: underline; text-decoration-thickness: 0.07em; text-underline-offset: 0.2em; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (hover: hover) and (pointer: fine) { .button:hover { background: var(--accent-strong); } .link:hover { color: var(--accent); } }
   </style>
 </head>
 <body>
+  <header class="bar">
+    <a class="wordmark" href="../">Arnav Jain</a>
+    <a class="link" href="mailto:arnav.jain6505@gmail.com">Email</a>
+  </header>
   <main>
-    <p class="eyebrow">Project · Arnav Jain</p>
     <h1>SecureFile Vault</h1>
-    <p class="lede">A Google Drive-style file vault that stores every file's content exactly once. Upload the
-      same file a hundred times and it costs the storage of one, while each user's quota stays accurate.</p>
-    <span class="status"><span class="dot"></span>Live demo is being redeployed. Overview below.</span>
+    <p class="lede">A Google Drive-style file store that keeps each file's content once. Upload the same file a hundred
+      times and it takes the space of one, while every user's quota stays honest.</p>
+    <p class="status">The live demo is being redeployed. Until then, this page describes how it works.</p>
 
-    <section>
-      <h2>How it works</h2>
-      <ul>
-        <li><b>Content-addressed storage:</b> each upload is SHA-256 hashed and stored once as a blob, with
-          per-blob and per-user reference counts.</li>
-        <li><b>Safe deletes:</b> a blob shared by other files is protected from deletion at the database level.</li>
-        <li><b>Honest quotas:</b> usage is tracked both as uploaded and as actually stored, and the dashboard shows the savings.</li>
-        <li><b>Sharing:</b> public/private files, per-user shares, tags, and an admin panel with system-wide analytics.</li>
-      </ul>
-    </section>
+    <h2>How it stores files</h2>
+    <ul>
+      <li>Each upload is hashed with SHA-256 and stored once as a blob, with a reference count per blob and per user.</li>
+      <li>A blob that other files still point to cannot be deleted; the database refuses.</li>
+      <li>Quotas track both what a user uploaded and what is actually stored, and the dashboard shows the difference.</li>
+      <li>Files can be public or private, shared with named users, and tagged. An admin panel shows usage across the system.</li>
+    </ul>
 
-    <section>
-      <h2>Security</h2>
-      <ul>
-        <li>JWT authentication with bcrypt password hashing, and a separate admin auth system</li>
-        <li>Rate limiting, CORS protection and per-file access control</li>
-      </ul>
-    </section>
+    <h2>How it keeps them safe</h2>
+    <ul>
+      <li>JWT sign-in with bcrypt-hashed passwords, and a separate sign-in for admins.</li>
+      <li>Rate limiting, CORS rules and access checks on every file.</li>
+    </ul>
 
-    <section>
-      <h2>Stack</h2>
-      <div class="chips">
-        <span class="chip">Go</span><span class="chip">GraphQL (gqlgen)</span><span class="chip">PostgreSQL</span>
-        <span class="chip">sqlc</span><span class="chip">goose migrations</span><span class="chip">React 18</span>
-        <span class="chip">Tailwind CSS</span><span class="chip">Docker</span>
-        <span class="chip">nginx</span><span class="chip">AWS</span>
-      </div>
-    </section>
+    <h2>What it is built with</h2>
+    <p class="stack">Go and gqlgen for the GraphQL API, PostgreSQL with sqlc queries and goose migrations, React and
+      Tailwind for the interface, Docker and nginx to run it, on AWS.</p>
 
-    <div class="links">
-      <a class="btn primary" href="https://github.com/ArnavJain42/FrontendFile">Frontend source on GitHub</a>
-      <a class="btn" href="https://arnavjain42.github.io/My_Profile/">Back to portfolio</a>
+    <div class="actions">
+      <a class="button" href="https://github.com/ArnavJain42/FrontendFile" target="_blank" rel="noopener">Frontend code</a>
+      <a class="link" href="../#projects">Back to the portfolio</a>
     </div>
-
-    <footer>
-      <noscript><p>JavaScript is off, so this page cannot forward you to the live demo.</p></noscript>
-      <p>Arnav Jain · <a href="mailto:arnav.jain6505@gmail.com">arnav.jain6505@gmail.com</a></p>
-    </footer>
   </main>
 </body>
 </html>

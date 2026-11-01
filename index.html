@@ -3,469 +3,524 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arnav Jain | AI Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arnav Jain · AI Software Engineer</title>
   <meta name="description"
-    content="Arnav Jain, AI Software Engineer at Tecdia India: production computer vision, reliable backends and ML pipelines." />
+    content="Arnav Jain, AI Software Engineer at Tecdia India. Computer vision that runs on a live factory line, and the backends that keep it correct." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arnav Jain · AI Software Engineer" />
+  <meta property="og:description"
+    content="Computer vision that runs on a live factory line, and the backends that keep it correct." />
+  <meta property="og:url" content="https://arnavjain42.github.io/My_Profile/" />
+  <meta property="og:image" content="https://arnavjain42.github.io/My_Profile/me.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#0a0c10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script>
+    // Apply a saved theme before first paint so there is no flash.
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
 </head>
 
 <body>
-  <nav id="desktop-nav">
-    <div class="logo">Arnav Jain</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Experience</a></li>
-        <li><a href="#experience">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Arnav Jain</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#work" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </div>
-    </div>
-  </nav>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
 
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="me.jpg" alt="Arnav Jain profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Arnav Jain</h1>
-      <p class="section__text__p2">AI Software Engineer at Tecdia India</p>
-      <div class="btn-container">
-        <button class="btn btn-color-2"
-          onclick="location.href='https://drive.google.com/file/d/1FRG21PfFDuSjSsPRI4cFidUZHpEXG3rs/view?usp=drive_link'">
-          Download Resume
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="top">
+    <div class="nav-inner container">
+      <a class="brand" href="#top" aria-label="Arnav Jain, back to top">
+        <span class="brand-mark">AJ</span><span>Arnav Jain</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="kbd-btn" id="open-palette" type="button" aria-label="Open command menu">
+          <span>Search</span><kbd class="kbd-hint">Ctrl K</kbd>
         </button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">
-          Contact Info
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+          </svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-toggle" type="button" aria-label="Open menu"
+          aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
         </button>
       </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://linkedin.com/in/arnav-jain-8aa943156/'" />
-        <img src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/ArnavJain42/'" />
-      </div>
     </div>
-  </section>
-
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <br>
-    <br>
-    <div class="section-container">
-      <div class="section__pic-container">
-        <img src="picolo.jpg" alt="Profile picture" class="about-pic" style="filter: grayscale(60%);" />
-      </div>
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h3>Experience</h3>
-            <p>AI Software Engineer, Tecdia India<br />Intern, Tecdia Japan<br />SDE Intern, Cygnus Capital<br />Research
-              Intern, IIT Jodhpur</p>
-          </div>
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p>B.Tech CSE<br />VIT Vellore (2022-26)<br />CGPA 9.01</p>
-          </div>
-        </div>
-        <div class="text-container">
-          <p>
-            I'm an AI Software Engineer at Tecdia India. I joined as an intern in January 2026 and moved to full-time
-            in July. I build AI systems that have to work on a real production line: a multi-view computer vision model
-            that judges chips in under 260 ms, the backend that collects and labels its training data, and the pipeline
-            that retrains models and only promotes one when it beats the current champion.
-            <br>
-            <br>
-            I care about the engineering around the model as much as the model itself: idempotent APIs, crash recovery,
-            and systems that decline to answer rather than guess when they are unsure. I graduated in Computer Science
-            from VIT Vellore in 2026 with a 9.01 CGPA, after internships at Tecdia Japan, Cygnus Capital and IIT
-            Jodhpur.
-          </p>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#work'" />
-  </section>
-
-  <section id="work">
-    <p class="section__text__p1">Where I've Worked</p>
-    <h1 class="title">Experience</h1>
-    <div class="timeline">
-      <div class="details-container role-card">
-        <div class="role-head">
-          <h3>Tecdia India Pvt. Ltd.</h3>
-          <span class="role-meta">Jan 2026 – Present · Bengaluru · <a class="cert-link" href="https://drive.google.com/file/d/1zXi7-YUgQbJmZepLBBXHGtBR-BlbGKVA/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
-        </div>
-        <p class="role-title">AI Software Engineer, Full-time (Jul 2026 – Present) · AI Engineer Intern (Jan – Jun 2026)</p>
-        <ul>
-          <li>Core engineer on a multi-view AI visual inspection system for chip components, now running on a live
-            production line in Cebu, Philippines.</li>
-          <li>Built the data-labelling platform backend (FastAPI, PostgreSQL, WebSockets) with idempotent, retry-safe
-            writes and exactly-once recovery after outages.</li>
-          <li>Built the retraining pipeline: a new model goes live only after beating the current one on a frozen test set.</li>
-          <li>Led a team of 4 interns building an inventory and demand-forecasting system.</li>
-        </ul>
-      </div>
-      <div class="details-container role-card">
-        <div class="role-head">
-          <h3>Tecdia Semiconductors Co. Ltd.</h3>
-          <span class="role-meta">May 2025 – Jul 2025 · Tokyo (Remote) · <a class="cert-link" href="https://drive.google.com/file/d/1ad0TlYDXAiMFVYg1vVZJ5pEDsz7PiBOa/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
-        </div>
-        <p class="role-title">Software Engineering Intern, ERP &amp; Automation</p>
-        <ul>
-          <li>Customised Infor SyteLine ERP modules, forms and reports on MS SQL Server.</li>
-          <li>Built a Node.js label-printing service wrapping the Brother printer SDK, still in production.</li>
-        </ul>
-      </div>
-      <div class="details-container role-card">
-        <div class="role-head">
-          <h3>Cygnus Capital</h3>
-          <span class="role-meta">Jan 2025 – Mar 2025 · Indore · <a class="cert-link" href="https://drive.google.com/file/d/18nh7X_qbTAuehlG49IpSKb3s1mqplRBd/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
-        </div>
-        <p class="role-title">Software Development Intern, Full Stack</p>
-        <ul>
-          <li>Built features for Operate, a trading platform with 10x leverage: portfolio, live market data, funds.</li>
-          <li>Moved the backend to serverless AWS (Lambda, API Gateway) and managed EC2 and AWS accounts.</li>
-        </ul>
-      </div>
-      <div class="details-container role-card">
-        <div class="role-head">
-          <h3>Vanet Lab, IIT Jodhpur</h3>
-          <span class="role-meta">Jun 2024 – Jul 2024 · Jodhpur · <a class="cert-link" href="https://drive.google.com/file/d/1SkdbqrnDdYm_JEjJRA5bdeyeFGOovzJH/view?usp=drive_link" target="_blank" rel="noopener">Certificate &#8599;</a></span>
-        </div>
-        <p class="role-title">Research Intern, Machine Learning</p>
-        <ul>
-          <li>Worked on a research paper on early detection of Alzheimer's disease from smartwatch sensor data.</li>
-          <li>Implemented and compared classification models, including the data preprocessing.</li>
-        </ul>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
-
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Skills</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">AI &amp; Machine Learning</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PyTorch</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>OpenCV</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>scikit-learn</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>YOLO</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Anomaly Detection</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>LLM Agents</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Backend Development</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>FastAPI</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Node.js</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Express.js</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>GraphQL</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>WebSockets</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">Programming Languages</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Python</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Go</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>C++</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>SQL</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Tools &amp; Cloud</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>AWS</h3>
-                <p><a class="cert-link" href="https://drive.google.com/file/d/1UxcF-54jJ9YMOR-Fj7qA3F9nrYTrPa-Y/view?usp=drive_link" target="_blank" rel="noopener">Certified &#8599;</a></p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Docker</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Git/GitHub</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Linux</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>React.js</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Japanese</h3>
-                <p>Basic (N5)</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-
-  <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="projects-grid">
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Tecdia · In production</span>
-        <h2>Real-Time AI Visual Inspection System</h2>
-        <p>An AI second opinion for a chip inspection machine: it reads four lighting views of each chip face and
-          answers the machine's PLC in 156 ms. In a head-to-head on 921 operator-labelled chips it beat the machine's
-          rule-based check, 94.4% vs 89.0% accuracy, catching 85% of defective chips against 47%. A multi-view
-          EfficientNet with attention fusion, trained on 27.7K chip faces. I own the AI side end to end.</p>
-        <div class="chips"><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span
-            class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">asyncio</span><span
-            class="chip">CUDA</span></div>
-      </div>
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Personal project</span>
-        <h2>SecureFile Vault</h2>
-        <p>A Google Drive-style vault that stores each file's content exactly once. SHA-256 content addressing with
-          reference counts, so duplicate uploads cost nothing, plus JWT auth, sharing, quotas and admin analytics.</p>
-        <div class="chips"><span class="chip">Go</span><span class="chip">GraphQL</span><span
-            class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">Docker</span><span
-            class="chip">AWS</span></div>
-        <div class="btn-container">
-          <a href="./securefile/"><button class="btn btn-color-2 project-btn">Overview</button></a>
-          <a href="https://github.com/ArnavJain42/FrontendFile"><button class="btn btn-color-2 project-btn">Github</button></a>
-        </div>
-      </div>
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Tecdia · Team lead</span>
-        <h2>Smart Inventory &amp; Demand Forecasting</h2>
-        <p>Led 4 interns replacing a 136-column Excel workflow with live reorder points, shortage risk and order advice.
-          A forecasting service back-tests 6 models per item and keeps the one with the lowest holdout error.</p>
-        <div class="chips"><span class="chip">Node.js</span><span class="chip">Prisma</span><span
-            class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">FastAPI</span><span
-            class="chip">statsmodels</span></div>
-      </div>
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Tecdia · Computer vision</span>
-        <h2>Chip Dimension Measurement</h2>
-        <p>Benchmarked 13 classical methods for measuring chips and found the most repeatable one was 25–33% wrong: it
-          measured the gold pattern, not the chip. My multi-view union method reaches 0.69% error at 42 ms per face and
-          agrees with the vendor's machine within about 2% across 11.6K faces.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span
-            class="chip">NumPy</span></div>
-      </div>
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Personal project · NLP</span>
-        <h2>FormulaVerse</h2>
-        <p>Turns a math equation into a realistic word problem: SymPy parses it, FAISS retrieves a matching scenario
-          template, and an instruction-tuned Flan-T5 writes the problem.</p>
-        <div class="chips"><span class="chip">SymPy</span><span class="chip">FAISS</span><span
-            class="chip">Flan-T5</span><span class="chip">Flask</span><span class="chip">React</span></div>
-        <div class="btn-container">
-          <a href="https://github.com/ArnavJain42/FormulaVerseModel"><button
-              class="btn btn-color-2 project-btn">Github</button></a>
-        </div>
-      </div>
-      <div class="details-container color-container project-card">
-        <span class="project-tag">Cygnus Capital</span>
-        <h2>Operate: Trading Platform</h2>
-        <p>Stocks and derivatives trading with 10x leverage: portfolio, live market data, charts, watchlists and funds
-          management on a serverless AWS backend. The product now runs under another organisation.</p>
-        <div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span
-            class="chip">DynamoDB</span><span class="chip">AWS Lambda</span></div>
-        <div class="btn-container">
-          <a href="https://operate.trade"><button class="btn btn-color-2 project-btn">Live Site</button></a>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-  </section>
-
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:arnav.jain6505@gmail.com">arnav.jain6505@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://linkedin.com/in/arnav-jain-8aa943156">LinkedIn</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/github.png" alt="GitHub icon" class="icon contact-icon" />
-        <p><a href="https://github.com/ArnavJain42">GitHub</a></p>
-      </div>
-    </div>
-  </section>
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Experience</a></li>
-          <li><a href="#experience">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <p>Copyright &#169; 2026 Arnav Jain. All Rights Reserved.</p>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-text reveal">
+        <p class="pill"><span class="dot" aria-hidden="true"></span>AI Software Engineer · Tecdia India</p>
+        <h1 id="hero-title">I build AI that works on the <span class="grad-text">factory floor</span>, not just in a notebook.</h1>
+        <p class="lede">I take computer vision from data collection to a live production line: the models, the
+          real-time integration with the machine, and the backends that keep every result correct.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">See my work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="btn btn-ghost" id="resume-link" target="_blank" rel="noopener"
+            href="https://drive.google.com/file/d/1FRG21PfFDuSjSsPRI4cFidUZHpEXG3rs/view?usp=drive_link">Resume ↗</a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/ArnavJain42" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/arnav-jain-8aa943156" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></svg>
+          </a>
+          <button type="button" class="copy-email" aria-label="Copy email address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 6-10 7L2 6" /></svg>
+          </button>
+        </div>
+        <p class="hint">Tip: press <kbd class="kbd-hint">Ctrl K</kbd> to jump anywhere on this page.</p>
+      </div>
+
+      <!-- Live inspection simulation -->
+      <div class="demo card reveal" role="region" aria-label="Animated simulation of the chip inspection system">
+        <div class="demo-head">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Live inspection</span>
+          <span class="tag">simulation</span>
+        </div>
+        <div class="views" id="views">
+          <figure class="view"><canvas aria-hidden="true"></canvas><figcaption>View 1 · bright<span class="attn"><i></i></span></figcaption></figure>
+          <figure class="view"><canvas aria-hidden="true"></canvas><figcaption>View 2 · dark<span class="attn"><i></i></span></figcaption></figure>
+          <figure class="view"><canvas aria-hidden="true"></canvas><figcaption>View 3 · angle<span class="attn"><i></i></span></figcaption></figure>
+          <figure class="view"><canvas aria-hidden="true"></canvas><figcaption>View 4 · coaxial<span class="attn"><i></i></span></figcaption></figure>
+        </div>
+        <div class="verdict" aria-live="polite">
+          <span class="badge" id="v-badge">IDLE</span>
+          <span class="v-label" id="v-label">Waiting for a trigger…</span>
+          <span class="v-ms" id="v-ms">— ms</span>
+        </div>
+        <div class="conf" aria-hidden="true"><span id="v-conf"></span></div>
+        <div class="tray" id="tray" aria-hidden="true"></div>
+        <div class="demo-foot">
+          <span><b id="c-insp">0</b> inspected</span>
+          <span><b id="c-ng">0</b> flagged NG</span>
+          <button class="mini-btn" id="next-chip" type="button">Inspect next ↻</button>
+        </div>
+        <p class="demo-note">A visual sketch of the real system: four lighting views per chip face, attention
+          weights showing which view the model trusts, and a verdict for the machine's PLC. The bars under each view
+          are the attention weights.</p>
+      </div>
+    </section>
+
+    <!-- ===================== IMPACT ===================== -->
+    <section class="section container" id="impact" aria-labelledby="impact-title">
+      <div class="section-head reveal">
+        <span class="eyebrow">00 · Impact</span>
+        <h2 id="impact-title">Head-to-head with the machine</h2>
+        <p>October 2026, on the production line: my model against the inspection machine's rule-based check, judged
+          against 921 chips labelled by an operator.</p>
+      </div>
+      <div class="bento">
+        <article class="card metric wide reveal">
+          <span class="num"><span data-count="94.4" data-decimals="1">94.4</span>%<span class="vs">vs 89.0%</span></span>
+          <h3>Accuracy</h3>
+          <p>Statistically significant over the rule-based check (McNemar, p &lt; 0.00001).</p>
+        </article>
+        <article class="card metric wide reveal">
+          <span class="num"><span data-count="85">85</span>%<span class="vs">vs 47%</span></span>
+          <h3>Defective chips caught</h3>
+          <p>Almost twice as many, while rejecting fewer good chips (4.7% vs 6.7%).</p>
+        </article>
+        <article class="card metric reveal">
+          <span class="num"><span data-count="156">156</span> ms</span>
+          <h3>Trigger to verdict</h3>
+          <p>Median, so the line never waits.</p>
+        </article>
+        <article class="card metric reveal">
+          <span class="num"><span data-count="110">110</span>K+</span>
+          <h3>Images collected</h3>
+          <p>Through the labelling platform I built.</p>
+        </article>
+        <article class="card metric reveal">
+          <span class="num"><span data-count="29">29</span>/30</span>
+          <h3>Whisker defects caught</h3>
+          <p>The rule-based check caught 5.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 · About</span>
+        <h2 id="about-title">Engineer first, model second</h2>
+      </div>
+      <div class="about">
+        <div class="portrait reveal"><img src="me.jpg" alt="Portrait of Arnav Jain" loading="lazy" width="600"
+            height="750" /></div>
+        <div class="about-text reveal">
+          <p>I'm an <strong>AI Software Engineer at Tecdia India</strong>. I joined as an intern in January 2026 and
+            moved to full-time in July. I own the AI side of a visual inspection system that now runs on a live
+            production line in Cebu, Philippines.</p>
+          <p>The model is only part of the job. I also built the real-time link to the machine, the platform that
+            collects and labels training data, and the pipeline that only promotes a new model when it beats the
+            current one. I care about <strong>systems that decline to answer rather than guess</strong>, APIs that are
+            safe to retry, and results you can defend with numbers.</p>
+          <p>Before Tecdia I interned at Tecdia Japan, Cygnus Capital and IIT Jodhpur. I graduated in Computer Science
+            from VIT Vellore in 2026.</p>
+          <ul class="facts">
+            <li><span>Based in</span>Bengaluru, India</li>
+            <li><span>Education</span>B.Tech CSE, VIT Vellore · CGPA 9.01</li>
+            <li><span>Now</span>Scaling the inspection model to every chip surface</li>
+            <li><span>Speaks</span>English, Hindi, basic Japanese</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="section container" id="work" aria-labelledby="work-title">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 · Experience</span>
+        <h2 id="work-title">Where I've worked</h2>
+        <p>Every role links to its certificate.</p>
+      </div>
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <article class="card tl-card">
+            <header>
+              <div>
+                <h3>Tecdia India Pvt. Ltd.</h3>
+                <p class="role"><b>AI Software Engineer, Full-time</b> · Jul 2026 – Present</p>
+                <p class="role"><b>AI Engineer Intern</b> · Jan – Jun 2026</p>
+              </div>
+              <div class="tl-meta">
+                <span>Bengaluru</span>
+                <a class="cert" target="_blank" rel="noopener"
+                  href="https://drive.google.com/file/d/1zXi7-YUgQbJmZepLBBXHGtBR-BlbGKVA/view?usp=drive_link">Certificate ↗</a>
+              </div>
+            </header>
+            <ul>
+              <li>Own the AI side of a multi-view visual inspection system, from prototype to a live production line.</li>
+              <li>Beat the machine's rule-based check head to head: 94.4% vs 89.0% accuracy, 85% vs 47% of defects caught.</li>
+              <li>Built the data-labelling platform backend with retry-safe writes and exact recovery after outages.</li>
+              <li>Built the retraining pipeline: a model goes live only after beating the current one on a frozen test set.</li>
+              <li>Led a team of 4 interns building an inventory and demand-forecasting system.</li>
+            </ul>
+            <div class="chips"><span class="chip">PyTorch</span><span class="chip">FastAPI</span><span
+                class="chip">PostgreSQL</span><span class="chip">asyncio</span><span class="chip">CUDA</span></div>
+          </article>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <article class="card tl-card">
+            <header>
+              <div>
+                <h3>Tecdia Semiconductors Co. Ltd.</h3>
+                <p class="role"><b>Software Engineering Intern, ERP &amp; Automation</b> · May – Jul 2025</p>
+              </div>
+              <div class="tl-meta">
+                <span>Tokyo (Remote)</span>
+                <a class="cert" target="_blank" rel="noopener"
+                  href="https://drive.google.com/file/d/1ad0TlYDXAiMFVYg1vVZJ5pEDsz7PiBOa/view?usp=drive_link">Certificate ↗</a>
+              </div>
+            </header>
+            <ul>
+              <li>Customised Infor SyteLine ERP modules, forms and reports on MS SQL Server.</li>
+              <li>Built a Node.js label-printing service wrapping the Brother printer SDK, still in production.</li>
+            </ul>
+          </article>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <article class="card tl-card">
+            <header>
+              <div>
+                <h3>Cygnus Capital</h3>
+                <p class="role"><b>Software Development Intern, Full Stack</b> · Jan – Mar 2025</p>
+              </div>
+              <div class="tl-meta">
+                <span>Indore</span>
+                <a class="cert" target="_blank" rel="noopener"
+                  href="https://drive.google.com/file/d/18nh7X_qbTAuehlG49IpSKb3s1mqplRBd/view?usp=drive_link">Certificate ↗</a>
+              </div>
+            </header>
+            <ul>
+              <li>Built features for Operate, a trading platform with 10x leverage: portfolio, live market data, funds.</li>
+              <li>Moved the backend to serverless AWS (Lambda, API Gateway) and managed EC2 and AWS accounts.</li>
+            </ul>
+          </article>
+        </li>
+        <li class="tl-item reveal">
+          <span class="tl-dot" aria-hidden="true"></span>
+          <article class="card tl-card">
+            <header>
+              <div>
+                <h3>Vanet Lab, IIT Jodhpur</h3>
+                <p class="role"><b>Research Intern, Machine Learning</b> · Jun – Jul 2024</p>
+              </div>
+              <div class="tl-meta">
+                <span>Jodhpur</span>
+                <a class="cert" target="_blank" rel="noopener"
+                  href="https://drive.google.com/file/d/1SkdbqrnDdYm_JEjJRA5bdeyeFGOovzJH/view?usp=drive_link">Certificate ↗</a>
+              </div>
+            </header>
+            <ul>
+              <li>Worked on a research paper on early detection of Alzheimer's disease from smartwatch sensor data.</li>
+              <li>Implemented and compared classification models, including the data preprocessing.</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <div class="section-head reveal">
+        <span class="eyebrow">03 · Projects</span>
+        <h2 id="projects-title">Selected work</h2>
+      </div>
+
+      <article class="card feature reveal">
+        <div class="feature-top">
+          <span class="tag">Tecdia · In production</span>
+          <h3>AI Visual Inspection System</h3>
+          <p>An AI second opinion for a chip inspection machine. It reads four lighting views of each chip face,
+            decides good or defective, and writes the verdict to the machine's PLC before the pick arm moves.</p>
+        </div>
+        <div class="feature-grid">
+          <div>
+            <h4>// problem</h4>
+            <p>In our test the machine's rule-based check let 53% of defective chips through, and any AI verdict had
+              to arrive within the machine's cycle, with triggers a few hundred milliseconds apart.</p>
+          </div>
+          <div>
+            <h4>// what I built</h4>
+            <p>A multi-view EfficientNet with attention fusion, trained on 27.7K chip faces; an asyncio core with a
+              safety interlock that never writes a verdict to the wrong chip; and the data and retraining pipeline
+              behind it.</p>
+          </div>
+          <div>
+            <h4>// result</h4>
+            <p>Head to head on 921 operator-labelled chips the AI won on every headline number, at a median of
+              156 ms from trigger to verdict. On unseen chips, the new model catches 91% of defects, up from 82%.</p>
+          </div>
+        </div>
+        <div class="compare" id="compare">
+          <div class="compare-legend"><span>Rule-based check</span><span class="ai">My model</span></div>
+          <div class="cmp-row">
+            <div class="cmp-label">Accuracy</div>
+            <div class="bars">
+              <div class="bar"><span data-value="89.0" data-max="100"></span><b>89.0%</b></div>
+              <div class="bar ai"><span data-value="94.4" data-max="100"></span><b>94.4%</b></div>
+            </div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Defective chips caught</div>
+            <div class="bars">
+              <div class="bar"><span data-value="47.1" data-max="100"></span><b>47%</b></div>
+              <div class="bar ai"><span data-value="84.7" data-max="100"></span><b>85%</b></div>
+            </div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Whisker defects caught</div>
+            <div class="bars">
+              <div class="bar"><span data-value="5" data-max="30"></span><b>5 / 30</b></div>
+              <div class="bar ai"><span data-value="29" data-max="30"></span><b>29 / 30</b></div>
+            </div>
+          </div>
+          <div class="cmp-row">
+            <div class="cmp-label">Good chips rejected<small>lower is better</small></div>
+            <div class="bars">
+              <div class="bar"><span data-value="6.7" data-max="10"></span><b>6.7%</b></div>
+              <div class="bar ai"><span data-value="4.7" data-max="10"></span><b>4.7%</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">timm</span><span
+            class="chip">OpenCV</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span
+            class="chip">asyncio</span><span class="chip">CUDA</span></div>
+      </article>
+
+      <div class="grid-3">
+        <article class="card project reveal">
+          <span class="tag">Tecdia · Backend</span>
+          <h3>Data-Labelling Platform</h3>
+          <p>Operators label chip faces on iPads to build the training set. Writes carry idempotency keys so retries
+            replay instead of re-applying, and a resumed session recovers every missed record exactly once.</p>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span
+              class="chip">WebSockets</span><span class="chip">JWT</span></div>
+        </article>
+        <article class="card project reveal">
+          <span class="tag">Personal · Backend</span>
+          <h3>SecureFile Vault</h3>
+          <p>A Google Drive-style vault that stores each file's content once: SHA-256 content addressing with reference
+            counts, so duplicate uploads cost nothing. JWT auth, sharing, quotas and admin analytics.</p>
+          <div class="chips"><span class="chip">Go</span><span class="chip">GraphQL</span><span
+              class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">Docker</span></div>
+          <div class="links">
+            <a class="link-arrow" href="./securefile/">Overview →</a>
+            <a class="link-arrow" href="https://github.com/ArnavJain42/FrontendFile" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </article>
+        <article class="card project reveal">
+          <span class="tag">Tecdia · Computer vision</span>
+          <h3>Chip Dimension Measurement</h3>
+          <p>Of 13 classical methods, the most repeatable was 25–33% wrong: it measured the gold pattern, not the chip.
+            My multi-view union method reaches 0.69% error at 42 ms per face and matches the vendor's machine within
+            about 2% across 11.6K faces.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span
+              class="chip">NumPy</span></div>
+        </article>
+        <article class="card project reveal">
+          <span class="tag">Tecdia · Team lead</span>
+          <h3>Inventory &amp; Demand Forecasting</h3>
+          <p>Led 4 interns replacing a 136-column Excel workflow with live reorder points, shortage risk and order
+            advice. The forecaster back-tests 6 models per item and keeps the lowest holdout error.</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span
+              class="chip">React</span><span class="chip">FastAPI</span><span class="chip">statsmodels</span></div>
+        </article>
+        <article class="card project reveal">
+          <span class="tag">Personal · NLP</span>
+          <h3>FormulaVerse</h3>
+          <p>Turns a math equation into a realistic word problem: SymPy parses it, FAISS retrieves a matching scenario,
+            and an instruction-tuned Flan-T5 writes the problem.</p>
+          <div class="chips"><span class="chip">SymPy</span><span class="chip">FAISS</span><span
+              class="chip">Flan-T5</span><span class="chip">Flask</span></div>
+          <div class="links">
+            <a class="link-arrow" href="https://github.com/ArnavJain42/FormulaVerseModel" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </article>
+        <article class="card project reveal">
+          <span class="tag">Cygnus Capital</span>
+          <h3>Operate</h3>
+          <p>Stocks and derivatives trading with 10x leverage: portfolio, live market data, charts, watchlists and
+            funds on a serverless AWS backend. The product now runs under another organisation.</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span
+              class="chip">DynamoDB</span><span class="chip">AWS Lambda</span></div>
+          <div class="links">
+            <a class="link-arrow" href="https://operate.trade" target="_blank" rel="noopener">Live site ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <div class="section-head reveal">
+        <span class="eyebrow">04 · Skills</span>
+        <h2 id="skills-title">What I work with</h2>
+      </div>
+      <div class="skills">
+        <article class="card skill-group reveal">
+          <h3>AI &amp; Machine Learning</h3>
+          <div class="chips"><span class="chip">PyTorch</span><span class="chip">timm</span><span
+              class="chip">OpenCV</span><span class="chip">scikit-learn</span><span class="chip">YOLO</span><span
+              class="chip">multi-view learning</span><span class="chip">anomaly detection</span><span
+              class="chip">LLM agents</span></div>
+        </article>
+        <article class="card skill-group reveal">
+          <h3>Backend</h3>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">SQLAlchemy</span><span
+              class="chip">asyncio</span><span class="chip">Node.js</span><span class="chip">Express</span><span
+              class="chip">GraphQL</span><span class="chip">REST</span><span class="chip">WebSockets</span></div>
+        </article>
+        <article class="card skill-group reveal">
+          <h3>Languages</h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Go</span><span
+              class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">SQL</span></div>
+        </article>
+        <article class="card skill-group reveal">
+          <h3>Data, Cloud &amp; Tools</h3>
+          <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MS SQL Server</span><span
+              class="chip">DynamoDB</span><span class="chip">Docker</span><span class="chip">AWS</span><span
+              class="chip">Linux</span><span class="chip">Git</span><span class="chip">React</span></div>
+        </article>
+        <article class="card cert-card reveal">
+          <span class="cert-icon" aria-hidden="true">AWS</span>
+          <div>
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>Amazon Web Services</p>
+          </div>
+          <a class="cert" target="_blank" rel="noopener"
+            href="https://drive.google.com/file/d/1UxcF-54jJ9YMOR-Fj7qA3F9nrYTrPa-Y/view?usp=drive_link">View certificate ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <div class="card contact reveal">
+        <span class="eyebrow">05 · Contact</span>
+        <h2 id="contact-title" style="margin-top:10px">Let's build something <span class="grad-text">reliable</span>.</h2>
+        <p>I'm always happy to talk about computer vision in production, backend reliability, or a role where I can do
+          both.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary copy-email" type="button">Copy my email</button>
+          <a class="btn btn-ghost" href="mailto:arnav.jain6505@gmail.com">arnav.jain6505@gmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/arnav-jain-8aa943156" target="_blank"
+            rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <span>© 2026 Arnav Jain</span>
+      <span>Hand-built with HTML, CSS and vanilla JavaScript · hosted on GitHub Pages</span>
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- ===================== COMMAND PALETTE ===================== -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+      <input id="palette-input" type="text" placeholder="Type a command or search…" autocomplete="off"
+        aria-label="Search commands" aria-controls="palette-list" />
+      <ul class="palette-list" id="palette-list" role="listbox"></ul>
+      <div class="palette-foot">↑ ↓ to move · Enter to open · Esc to close</div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
 </body>
 
 </html>
